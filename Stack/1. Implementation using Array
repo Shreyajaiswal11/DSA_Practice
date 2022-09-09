@@ -1,0 +1,76 @@
+#include <iostream>
+using namespace std;
+class stack{
+    int top;
+    int size;
+    int *a;
+    public:
+    stack(int s){
+        top=-1;
+        size=s;
+        a=new int[size];
+    }
+    void push(int x){
+        if(top==size-1)
+        cout<<"stack overflow";
+        else{
+        top++;
+        a[top]=x;
+        }
+    }
+    void pop(){
+        int y;
+        if(top==-1)
+        cout<<"stack is empty";
+        else{
+        y=a[top];
+        top--;
+            
+        }
+    }
+    int peek(int pos){
+        int x=-1;
+        if(top-pos+1<0)
+        cout<<"Invalid position";
+        else
+        x=a[top-pos+1];
+        return x;
+    }
+    int stacktop(){
+        if(top==-1)
+        return -1;
+        else
+        return a[top];
+    }
+      int isempty(){
+        if(top==-1)
+        return 1;
+        else
+        return 0;
+    }
+      int isfull(){
+        if(top==-size-1)
+        return 1;
+        else
+        return 0;
+    }
+    void display(){
+        
+        if(top==-1){
+            cout<<"stack is empty";
+        }
+        else{
+            cout<<endl;
+             for(int i=top;i>=0;i--)
+             cout<<a[i]<<endl;  
+        }
+     
+}
+};
+int main() {
+	stack s1(3);
+	s1.push(1);
+	s1.push(2);
+	s1.push(3);
+	return 0;
+}
