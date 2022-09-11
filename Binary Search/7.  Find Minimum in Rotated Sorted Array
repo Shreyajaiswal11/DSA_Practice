@@ -1,0 +1,26 @@
+1.
+    int findMin(vector<int>& nums) {
+         int min=INT_MAX;
+        for(int i=0;i<nums.size();i++){
+            if(nums[i]<min)
+                min=nums[i];
+        }
+        return min;
+    }
+        
+        
+2. int findMin(vector<int>& nums) {
+        int n=nums.size();
+     int l=0,h=n-1;
+        if(nums[h]>=nums[0]) return nums[l];
+        while(l<=h){
+            int mid=l+(h-l)/2;
+            int prev=mid+n-1;
+            if(nums[mid]<=nums[(prev%n)])
+                return nums[mid];
+            if(nums[0]<=nums[mid])
+                l=mid+1;
+            else h=mid-1;
+        }
+    return 0;   
+    }
