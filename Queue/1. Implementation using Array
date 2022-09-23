@@ -1,0 +1,60 @@
+#include <iostream>
+using namespace std;
+class Queue{
+    public:
+    int size;
+    int front;
+    int rear;
+    int *arr;
+    Queue(int s){
+    size=s;
+     front=-1;
+     rear=-1;
+     arr=new int[s];
+    }
+    void enqueue(int val){
+        if(rear==size-1)
+        cout<<"queue full"<<endl;
+        else{
+        rear++;
+        arr[rear]=val;
+        }
+    }
+    int dequeue(){
+        int x=-1;
+        if(front==rear)
+        cout<<"Queue empty";
+        else{
+            front++;
+        x=arr[front];
+        }
+        return x;
+    }
+    void display(){
+        for(int i=front+1;i<=rear;i++){
+            cout<<arr[i]<<endl;
+        }
+    }
+};
+int main() {
+Queue q(6);
+q.enqueue(3);
+q.enqueue(7);
+q.dequeue();
+q.display();
+	return 0;
+}
+
+Drawbacks
+1. we canot reuse the spaces of deleted elements.
+2. Every location can be used only once.
+3. Thre may be a situation when queue is full and empty.
+
+
+Solutions 
+1. Resetting pointers 
+- Solution - At any time if queue is becomming empty. reinitialize them to -1.
+- Drawback - it doesnot gurantee the space should be reused definatly,if queue is not becoming empty at any time we canot reset it.
+
+2. Circular Queue
+- we can implement circular queue over an array by moving front and rear circularly.
