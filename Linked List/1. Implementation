@@ -1,0 +1,72 @@
+#include <iostream>
+using namespace std;
+class Node{
+    public:
+    int data;
+    Node* next;
+    Node(int d){
+      data=d;
+      next=NULL;
+    }
+};
+  //Insertion At Top of linked list 
+   void insertatfront(Node* &p,int val){
+        if(p==NULL){
+        p=new Node(val); 
+        return;
+        }
+        else{
+            Node* temp=new Node(val);
+            temp->next=p;
+            p=temp;
+        }
+    }
+    // Display Linked list Iterative way 
+    
+  void  print(Node*p){
+        while(p!=0){
+            cout<<p->data<<" ";
+            p=p->next;
+        }
+    }
+//Display Linked list Recursive way 
+void Rdisplay(Node*p){
+    if(p!=0)
+    {
+        cout<<p->data<<" ";
+        Rdisplay(p->next);
+         
+    }
+} 
+//Counting nodes in Linked list (iterative)
+void count(Node*p){
+    int count=0;
+    while(p!=NULL)
+    {
+        count++;
+        p=p->next;
+    }
+    cout<<count<<endl;
+}
+ //Counting nodes in Linked list (Recursive)
+ void Rcount(Node*p){
+    int count=0;
+   if(p!=NULL)
+    {
+        count++;
+        Rcount(p->next);
+    }
+    
+}
+int main() {
+Node* p=NULL;
+insertatfront(p,5);
+insertatfront(p,9);
+insertatfront(p,7);
+insertatfront(p,7);
+insertatfront(p,7);
+// Rdisplay(p);
+Rcount(p);
+
+	return 0;
+}
