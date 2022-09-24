@@ -50,13 +50,59 @@ void count(Node*p){
 }
  //Counting nodes in Linked list (Recursive)
  void Rcount(Node*p){
-    int count=0;
-   if(p!=NULL)
-    {
-        count++;
-        Rcount(p->next);
+  if(p==0)
+ return 0;
+ else
+ return Rcount(p->next)+1; 
+}
+//Sum of all the nodes (Itrative)
+ void sumofnode(Node*p){
+      int sum=0;
+      while(p!=0){
+          sum+=p->data;
+          p=p->next;
+      }
+      cout<<sum;
+  }
+//Recursive way to calculate sum of all nodes
+int Rsum(Node*p){
+    int sum=0;
+    if(p==0)
+    return 0;
+    return Rsum(p->next)+p->data;
+}
+//find Maxelement from ll(iterative) 
+int maxelement(Node*p){
+     int max=0;
+     while(p!=0){
+         if(p->data>max)
+         max=p->data;
+         p=p->next;
+     }
+    return max;
+ }
+
+//find Maxelement from ll(Recursive) 
+int maxelement(Node*p){
+     int max=0;
+    if(p==0)
+    return 0;
+     max=maxelement(p->next);
+   if (max>p->data)
+   return max;
+   else
+    return p->data;
+ }
+ //find element in linear search (iterative)
+ void linearsearch(Node*p,int key){
+    while(p!=0){
+        if(p->data==key){
+        cout<<"found"<<endl;
+        return;
     }
-    
+     p=p->next;
+}
+    cout<<"Not found";
 }
 int main() {
 Node* p=NULL;
