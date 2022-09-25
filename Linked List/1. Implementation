@@ -104,6 +104,8 @@ int maxelement(Node*p){
 }
     cout<<"Not found";
 }
+//Removing dublicate elements
+
 int main() {
 Node* p=NULL;
 insertatfront(p,5);
