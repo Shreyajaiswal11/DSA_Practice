@@ -19,6 +19,7 @@ void nge(int arr[],int n){
         }
          s.push(arr[i]); 
     }
+    reverse(v.begin(),v.end());
     for(int j=0;j<v.size();j++){
         cout<<v[j]<<" ";
     }
