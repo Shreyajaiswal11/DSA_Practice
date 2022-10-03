@@ -12,7 +12,7 @@ void countsort(int arr[],int n){
     int j=0;
     for(int i=0;i<=maxi;i++){
         while(v[i]>0){
-            arr[i]=i;
+            arr[j]=i;
             v[i]--;
             j++;
         }
