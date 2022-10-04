@@ -1,0 +1,48 @@
+#include <iostream>
+using namespace std;
+class queue{
+    public:
+    int rear;
+    int front;
+    int size;
+    int *arr;
+    queue(int s){
+        front=rear=0;
+        size=s;
+        arr=new int[s];
+    }
+    void enqueue(int d){
+        if((rear+1)%size==front)
+        cout<<"queue full";
+        rear=(rear+1)%size;
+        arr[rear]=d;
+    }
+    int dequeue()
+{
+    if(front==rear)
+    cout<<"queue empty";
+   front=(front+1)%size;
+    return arr[front];
+}
+void display(){
+    for(int i=front+1;i<=rear;i++){
+        cout<<arr[i]<<" ";
+    }
+}
+    
+};
+int main() {
+queue q(5);
+q.enqueue(5);
+q.enqueue(9);
+q.enqueue(4);
+q.enqueue(8);
+q.display();
+cout<<endl;
+cout<<q.dequeue();
+cout<<q.dequeue();
+cout<<endl;
+q.display();
+
+	return 0;
+}
