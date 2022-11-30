@@ -32,7 +32,8 @@ printarr(arr,n);
 ->no. of comparisionso(n^2)
 -> Intermediate or one or two pass will not give any useful result.
 -> In array we have to shift ele but in LL no need to shift.so, insertion sort is more compatible with LL.
-->Adaptive (by nature)
+->Adaptive (by nature) [The sorting algorithms in which the order of elements affects the time complexity of the sorting algorithm.]
+->if the data is already sorted, the algorithm will not reorder the elements. As a result, it reduces the number of iterations and improves execution speed.
 ->Best case if the arr is sorted in asc order -o(n)
 ->worst case if sorted in desc order o(n^2)
 ->stable
